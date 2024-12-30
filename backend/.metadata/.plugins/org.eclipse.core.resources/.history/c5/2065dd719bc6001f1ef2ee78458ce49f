@@ -8,7 +8,7 @@
     <insert id="insertUser" parameterType="map">
         INSERT INTO kimchoProject.tb_kc_user
         (user_email, user_password, user_name, user_phone, user_addr)
-        VALUES (#{userEmail}, #{userPassword}, #{userName}, #{userPhone}, #{userAddr});
+        VALUES (#{userAddr}, #{userPassword}, #{userName}, #{userPhone}, #{userAddr});
     </insert>
     
     <resultMap id="UserResultMap" type="com.site.tartboard.entity.User">
