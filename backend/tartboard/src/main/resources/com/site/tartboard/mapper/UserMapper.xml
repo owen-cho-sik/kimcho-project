@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTDMapper3.0//EN" 
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.site.tartboard.mapper.UserMapper">
+
+    <!-- 회원가입 시 사용자 정보 삽입 -->
+    <insert id="insertUser" parameterType="map">
+        INSERT INTO kimchoProject.tb_kc_user
+        (user_email, user_password, user_name, user_phone, user_addr)
+        VALUES (#{userAddr}, #{userPassword}, #{userName}, #{userPhone}, #{userAddr});
+    </insert>
+    
+    <resultMap id="UserResultMap" type="com.site.tartboard.entity.User">
+	    <result column="user_email" property="userEmail" />
+	    <result column="user_password" property="userPassword" />
+	    <result column="user_name" property="userName" />
+	    <result column="user_phone" property="userPhone" />
+	    <result column="user_addr" property="userAddr" />
+	</resultMap>
+    
+    <!-- 사용자 조회 -->
+    <select id="findByUserEmail" parameterType="String" resultMap="UserResultMap">
+        SELECT user_email, user_password, user_name, user_phone, user_addr
+          FROM kimchoProject.tb_kc_user
+         WHERE user_email = #{email}
+    </select>
+
+</mapper>

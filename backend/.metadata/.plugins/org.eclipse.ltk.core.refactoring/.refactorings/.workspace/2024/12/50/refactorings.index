@@ -1,0 +1,5 @@
+1733977086384	Delete resource 'tartboard/src/main/java/com/site/tartboard/config/JwtTokenProvider.java'
+1733977090088	Delete resource 'tartboard/src/main/java/com/site/tartboard/config/JwtAuthenticationFilter.java'
+1733977105543	Delete resource 'tartboard/src/main/java/com/site/tartboard/controller/AuthController.java'
+1733977623511	Delete resource 'tartboard/src/main/java/com/site/tartboard/config/SecurityConfig.java'
+1733985365608	Delete resource 'tartboard/src/main/java/com/site/tartboard/service/CustomUserDetailsService.java'

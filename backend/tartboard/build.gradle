@@ -13,14 +13,14 @@ java {
 	}
 }
 
-repositories {
-	mavenCentral()
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
 }
 
-dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+repositories {
+	mavenCentral()
 }
 
 tasks.named('test') {
@@ -30,4 +30,21 @@ tasks.named('test') {
 tasks.withType(JavaCompile) {
     sourceCompatibility = JavaVersion.VERSION_17
     targetCompatibility = JavaVersion.VERSION_17
+}
+
+dependencies {
+   implementation 'org.springframework.boot:spring-boot-starter-web'
+   implementation 'org.springframework.boot:spring-boot-starter-security'
+   implementation 'io.jsonwebtoken:jjwt:0.9.1'
+   testImplementation 'org.springframework.boot:spring-boot-starter-test'
+   testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+   compileOnly 'org.projectlombok:lombok'
+   annotationProcessor 'org.projectlombok:lombok'
+   //implementation 'org.springframework.boot:spring-boot-starter-data-jpa' 
+   //implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.0'
+   runtimeOnly 'com.mysql:mysql-connector-j'
+   // https://mvnrepository.com/artifact/org.mybatis.spring.boot/mybatis-spring-boot-starter
+   implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3'
+   implementation 'com.google.protobuf:protobuf-java:3.23.4'
+   implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.0'
 }
